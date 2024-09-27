@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Hotel Bill Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bill-container">
+        <h1>Hotel Bill Management System</h1>
+
+        <!-- Input Fields -->
+        <div class="input-section">
+            <input type="text" id="item-name" placeholder="Item Name">
+            <input type="number" id="item-price" placeholder="Price (₹)">
+            <input type="number" id="item-quantity" placeholder="Quantity">
+            <button id="add-item-btn">Add Item</button>
+        </div>
+
+        <!-- Tax and Discount -->
+        <div class="controls-section">
+            <input type="number" id="tax-rate" placeholder="Tax (%)">
+            <input type="number" id="discount-rate" placeholder="Discount (%)">
+            <button id="calculate-total-btn">Calculate Total</button>
+        </div>
+
+        <!-- Bill Details -->
+        <h2>Bill Details</h2>
+        <ul id="bill-list"></ul>
+
+        <!-- Total -->
+        <div class="total-section">
+            <h3>Subtotal: ₹ <span id="subtotal-amount">0.00</span></h3>
+            <h3>Total with Tax & Discount: ₹ <span id="final-amount">0.00</span></h3>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
