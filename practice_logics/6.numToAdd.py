@@ -23,7 +23,8 @@ for i in range(1,s+1):
         count = count + 1
         
 if count==2:
-    print(f"given number  is a prime number")
+    print(f"given number  
+          is a prime number")
 else:
     print("not a prime number")
     
