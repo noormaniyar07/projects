@@ -2,28 +2,28 @@ import os
 import platform
 
 def shutdown():
-    if platform.system() == "Windows":
-        os.system('shutdown -s')
-    elif platform.system() == "Linux" or platform.system() == "Darwin":
-        os.system("shutdown -h now")
-    else:
-        print("Os not supported!")
-
-def restart():
+    """Shut down the system based on the operating system."""
     system_type = platform.system()
     if system_type == "Windows":
-        os.system("shutdown -t 0 -r -f")  
-    elif system_type in ["Linux", "Darwin"]:
-        os.system('sudo reboot now')  
+        os.system("shutdown /s /f /t 0")  
+    elif system_type == "Linux" or system_type == "Darwin": 
+        os.system("shutdown -h now")
     else:
-        print("OS not supported!")
+        print("Operating system not supported!")
 
-
-command = input("Use \'r\' for restart and \'s\' for shutdown: ").lower()
-
-if command == "r":
-    restart()
-elif command == "s":
+def restart():
+    """Restart the system based on the operating system."""
+    system_type = platform.system()
+    if system_type == "Windows":
+        os.system("shutdown /r /f /t 0")
+    elif system_type in ["Linux", "Darwin"]:
+        os.system("sudo reboot")
+    else:
+        print("Operating system not supported!")
+command = input("Enter 'r' to restart or 's' to shutdown: ").lower()
+if command == "s":
     shutdown()
+elif command == "r":
+    restart()
 else:
-    print("Wrong letter")
+    print("Invalid input. Please enter 'r' or 's'.")
